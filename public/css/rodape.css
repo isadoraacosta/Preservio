@@ -1,0 +1,38 @@
+/* rodape: */
+
+.iroda{
+    padding: 3px;
+    font-size: 20px ;
+    color: #000000;
+    padding-top: 8px;
+}
+
+#linksredes{
+    text-align: center;
+}
+
+footer {
+    margin-top: auto; /*  rodapé no final da página */
+    background-color: #ebefec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 45px 70px;  
+    /* width: 100%; */
+    flex-wrap: wrap;
+}
+
+footer div{
+    margin-bottom: 15px;
+    margin: 8px;
+}
+
+
+@media (max-width: 1000px) {
+    footer{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+  }

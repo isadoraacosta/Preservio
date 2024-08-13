@@ -1,0 +1,82 @@
+CREATE DATABASE preservio;
+
+USE preservio;
+
+
+CREATE TABLE usuario (
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT ,
+email VARCHAR(30) NOT NULL,
+nome VARCHAR(30) NOT NULL,
+sobrenome VARCHAR(100) NOT NULL,
+data_nasc DATE NOT NULL,
+senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE administrador (
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT ,
+email VARCHAR(30) NOT NULL UNIQUE ,
+nome VARCHAR(30) NOT NULL,
+sobrenome VARCHAR(100) NOT NULL,
+data_nasc DATE NOT NULL,
+senha VARCHAR(255) NOT NULL,
+cpf VARCHAR(25) UNIQUE NOT NULL
+);
+
+CREATE TABLE tipo_denuncia (
+id_tipo INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(250)
+);
+
+CREATE TABLE denuncia (
+id_denuncia INT PRIMARY KEY AUTO_INCREMENT,
+imagem VARCHAR(255),
+status_denuncia VARCHAR(100) NOT NULL,
+data_d DATE NOT NULL,
+hora_d TIME NOT NULL,
+assunto VARCHAR(100),
+local_crime VARCHAR(200) NOT NULL,
+descricao VARCHAR(250) NOT NULL,
+id_fk INT ,
+data_recebida DATE NOT NULL,
+FOREIGN KEY(id_fk) REFERENCES usuario(id),
+id_tipo_fk INT NOT NULL,
+FOREIGN KEY(id_tipo_fk) REFERENCES tipo_denuncia(id_tipo)
+);
+
+CREATE TABLE recebe (
+data_visu DATE NOT NULL,
+id_denuncia_fk INT NOT NULL,
+id_fk INT NOT NULL,
+PRIMARY KEY(id_denuncia_fk, id_fk),
+FOREIGN KEY(id_denuncia_fk) REFERENCES denuncia(id_denuncia),
+FOREIGN KEY(id_fk) REFERENCES administrador(id)
+);
+
+CREATE TABLE tipo_info (
+id_tipo_info INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE informacoes (
+id_info INT PRIMARY KEY AUTO_INCREMENT,
+titulo VARCHAR(200) NOT NULL,
+descricao VARCHAR(900) NOT NULL,
+imagem VARCHAR(255),
+legenda_imagem VARCHAR(200),
+autor VARCHAR(200) NOT NULL,
+data_postagem DATE NOT NULL,
+id_fk INT NOT NULL,
+FOREIGN KEY(id_fk) REFERENCES administrador(id),
+id_tipo_info_fk INT NOT NULL,
+FOREIGN KEY(id_tipo_info_fk) REFERENCES tipo_info(id_tipo_info)
+);
+
+CREATE TABLE retorno (
+id_retorno INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(900) NOT NULL,
+id_fk INT ,
+FOREIGN KEY(id_fk) REFERENCES administrador(id),
+id_denuncia_fk INT NOT NULL,
+FOREIGN KEY(id_denuncia_fk) REFERENCES denuncia(id_denuncia)
+);
+

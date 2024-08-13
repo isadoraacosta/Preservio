@@ -1,0 +1,473 @@
+*{margin: 0;padding: 0; box-sizing: border-box;}
+
+#maior{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 300px; */
+    /* margin: 0 130px; */
+    padding: 0 13%;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+
+}
+
+#denuncia{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+#denuncia h2{
+    font-size: 45px;
+    margin: 0 0 20px 0;
+    text-align: justify;
+}
+
+#denuncia p{
+    font-size: 15px;
+    padding: 0 3%;
+    text-align: justify;
+}
+
+#informacao{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    /* padding-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* align-items: center; */
+}
+#informacao h3{
+   font-size: 23px;
+   padding-left: 42px;
+   /* text-align: center; */
+}
+
+#informacoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+
+#informacoes p{
+    padding: 20px 0px;
+    font-size: 15px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+    #maior {
+        flex-direction: column;
+    }
+
+    #denuncia,
+    #informacao {
+        width: 100%;
+    }
+}
+
+
+/* OLHAR: ------------------------------------------------------------------------------------------------------- */
+
+
+#informacao p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Ajuste para posicionar o sublinhado */
+    width: 100%;
+    height: 2px;
+    background-color: #1F6031; /* Cor do sublinhado */
+    transform: scaleX(0); /* Inicia invisível */
+    transition: transform 0.3s ease-in-out; /* Adiciona transição */
+}
+
+#informacao p:hover::after {
+    transform: scaleX(1); /* Torna o sublinhado visível no hover */
+}
+
+#informacao p {
+    position: relative; /* Tornar o posicionamento do pseudo-elemento relativo a este elemento */
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+#meio{
+    /* width: 100%; */
+    margin: 20px 300px;
+    padding: 100px 70px;
+    background-color: #1F6031;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    /* border-top-left-radius: 25px;
+    border-bottom-right-radius :25px ; */
+}
+
+#meio p {
+    padding: 0 50px;
+    padding-bottom: 25px;
+    padding-top: 20px;
+}
+
+#meio .animal {
+    font-size: 50px;
+    color: white;
+}
+
+
+
+#importante{
+    width: 100%;
+    text-align: center;
+    /* padding: 50px 500px 0px; */
+    padding: 50px 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+}
+
+#importante p {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+#importante:hover{
+    transform: scale(1.15);
+}
+
+
+
+#tudo {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 50px 260px; */
+    margin-bottom: 50px;
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
+    align-items: center;
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+
+.container1{
+    /* width: 50%; */
+    margin-top: 60px;
+    align-self:flex-start;
+    margin-right: 25px;
+}
+
+.indicator {
+    width: 370px;
+    height: 38px;
+    border-radius: 8px;
+    border: 2px solid #cac9c9;
+    margin:1px;
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.container1 p {
+    /* color: black; */
+    font-size: 17px;
+    color: #cac9c9;
+}
+
+.indicador i {
+    margin-left: 200px;
+    margin-right: 20px;
+    color: #cac9c9;
+}
+
+
+.iindicador{
+    color: #cac9c9;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#indicador1{
+    background-color: #1F6031;
+    border: 2px solid #1F6031;
+}
+
+#p1{
+    color: white;
+}
+
+#i1{
+    color: white;
+}
+
+
+
+
+
+#tudo h2{
+    font-size: 30px;
+    color: black;
+    text-align: left;
+    font-family: Poppins;
+}
+
+.containerform{
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 15px;
+
+}
+
+
+.parteform{
+    display: none; /*deixa invisivel*/
+    width: 60%;
+    padding: 50px;
+}
+
+.parteform label{
+    font-size: 20px;
+    font-family: Poppins;
+}
+
+label{
+    color: black;
+    display: flex;
+    justify-content: left;
+    font-family: Poppins;
+}
+
+.parteform input{
+    font-size: 15px;
+    padding: 5px 55px;
+    margin-bottom: 15px;
+}
+
+.visivel{
+    display: block; /*deixa visivel*/
+}
+
+.paragrafo{
+    color: black;
+    font-size: 20px;
+}
+
+.icone{
+    display: flex;
+    background-color: white;
+    color: #000000;
+    align-self: center;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 8px;
+    width: 450px;
+    height: 50px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: 1px solid black;
+}
+.icone i{
+    color: #cac9c9;
+}
+
+
+/* .iconetextarea{
+    display: flex;
+    background-color: white;
+    color: #000000;
+    align-self: center;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 4px;
+    width:500px;
+    height: 70px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border: 1px solid black;
+} */
+
+input{
+    font-size: 15px;
+    border: none;
+    background-color: white;
+    width: 500px;
+    height: 30px;
+    padding: 0 0 0 10px;
+    align-self: center;
+    margin: 10px;
+}
+
+textarea{
+    font-size: 15px;
+    border: none;
+    background-color: white;
+    width: 500px;
+    height: 30px;
+    padding: 0 0 0 10px;
+    align-self: center;
+    margin: 10px;
+    resize: none;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+button{
+    width: 110px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1F6031;
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 340px;
+    font-family: Poppins;
+}
+
+button:hover{
+    background-color: black;
+}
+
+select{
+    border: none;
+    margin-left: 10px;
+    padding-right: 100px;
+}
+
+textarea{
+    background-color: white;
+    border: none;
+    padding: 0 0 0 10px;
+}
+
+#pfinal{
+    font-size: 20px;
+}
+
+/* .informacao{
+    margin: 0 30px 0 30px;
+    text-align: center;
+    font-family: Poppins;
+} */
+
+/* .container2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
+
+
+
+
+.verde{
+    background-color: #1F6031;
+    color: white;
+    border: #1F6031;
+}
+
+
+
+
+main{
+    padding-top: 8%;
+    /* background-color: #1F6031; */
+}
+
+@media screen and (max-width: 1500px) {
+    main{
+        padding-top: 16%;
+    }
+}
+@media screen and (max-width: 1260px) {
+    main{
+        padding-top: 18%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    main{
+        padding-top: 20%;
+    }
+}
+@media screen and (max-width: 950px) {
+    main{
+        padding-top: 25%;
+    }
+}
+@media screen and (max-width: 750px) {
+    main{
+        padding-top: 40%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    main{
+        padding-top: 50%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main{
+        padding-top: 60%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main{
+        padding-top: 70%;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    #meio{
+        margin: auto;
+        padding: auto;
+    }
+
+    #importante{
+        /* margin: auto; */
+        padding:0;
+    }
+
+    button{
+        margin-left: 300px;
+    }
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+button, label{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
